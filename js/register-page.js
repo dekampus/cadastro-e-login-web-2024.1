@@ -6,6 +6,5 @@ registerForm.addEventListener('submit', (e) => {
     let name = document.getElementById('name').value;
     let cpf = document.getElementById('cpf').value;
     let email = document.getElementById('email').value;
-
-    console.log(name, cpf, email);
+    let password = document.getElementById('password').value;
 })
