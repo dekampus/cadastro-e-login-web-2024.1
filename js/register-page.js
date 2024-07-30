@@ -8,7 +8,10 @@ registerForm.addEventListener('submit', (e) => {
     let email = document.getElementById('email').value;
     let password = document.getElementById('password').value;
 
-    saveToStorage(name, cpf, email, password);
+    if (saveToStorage(name, cpf, email, password))
+        registerSuccess();
+    else
+        registerUnsuccess();
 })
 
 function saveToStorage(name, cpf, email, password) {
@@ -19,9 +22,33 @@ function saveToStorage(name, cpf, email, password) {
         password: password
     };
 
-    console.table(user);
+    //console.table(user);
 
     let userJSON = JSON.stringify(user);
 
     sessionStorage.setItem(email, userJSON);
+
+    return true;
+}
+
+function registerSuccess() {
+    const registerFormContainer = document.getElementsByClassName('register-form-container')[0];
+    registerForm.style.display = 'none';
+
+    let p = document.createElement('p');
+    p.innerText = 'Cadastrado com sucesso';
+
+    let a = document.createElement('a');
+    a.href = './index.html';
+    a.innerText = 'Entrar';
+
+    let registerLink= document.createElement('a');
+    registerLink.href = './register.html';
+    registerLink.innerText = 'Fazer novo cadastrado';
+
+    registerFormContainer.append(p, a, registerLink);
+}
+
+function registerUnsuccess() {
+    console.log('Unsuccess registration.')
 }
