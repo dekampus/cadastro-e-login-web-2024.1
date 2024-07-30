@@ -22,7 +22,8 @@ function saveToStorage(name, cpf, email, password) {
         password: password
     };
 
-    //console.table(user);
+    if (sessionStorage.getItem(email))
+        return false;
 
     let userJSON = JSON.stringify(user);
 
@@ -50,5 +51,14 @@ function registerSuccess() {
 }
 
 function registerUnsuccess() {
-    console.log('Unsuccess registration.')
+    if (document.getElementById('unsuccess-p')) {
+        let node = document.getElementById('unsuccess-p');
+        node.parentNode.removeChild(node);
+    }
+    
+    let p = document.createElement('p');
+    p.id = 'unsuccess-p';
+    p.innerText = 'Não foi possível realizar o cadastro.\nE-mail já cadastrado.';
+
+    registerForm.appendChild(p);
 }
