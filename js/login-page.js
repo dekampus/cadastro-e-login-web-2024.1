@@ -3,14 +3,17 @@ const loginForm = document.getElementById('login-form');
 loginForm.addEventListener('submit', (e) => {
     e.preventDefault();
 
-    let email = document.getElementById('email');
-    let password = document.getElementById('password');
+    let email = document.getElementById('email').value;
+    let password = document.getElementById('password').value;
 
-    if (email.value == 'test@server.com' && password.value == 'senha321') {
-        loginSucess();
-    } else {
+    let user = JSON.parse(sessionStorage.getItem(email));
+
+    if (!user)
         loginUnsucess();
-    }
+    else if (email == user.email && password == user.password)
+        loginSucess();
+    else
+        loginUnsucess();
 })
 
 function loginSucess() {
