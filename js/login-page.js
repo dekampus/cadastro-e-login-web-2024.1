@@ -9,14 +9,14 @@ loginForm.addEventListener('submit', (e) => {
     let user = JSON.parse(sessionStorage.getItem(email));
 
     if (!user)
-        loginUnsucess();
+        loginUnsuccess();
     else if (email == user.email && password == user.password)
-        loginSucess();
+        loginSuccess();
     else
-        loginUnsucess();
+        loginUnsuccess();
 })
 
-function loginSucess() {
+function loginSuccess() {
     const loginFormContainer = document.getElementsByClassName('login-form-container')[0];
     loginForm.style.display = 'none';
 
@@ -26,7 +26,7 @@ function loginSucess() {
     loginFormContainer.appendChild(p);
 }
 
-function loginUnsucess() {
+function loginUnsuccess() {
     if (document.getElementById('login-unsuccess-p')) {
         let node = document.getElementById('login-unsuccess-p');
         node.parentNode.removeChild(node);
