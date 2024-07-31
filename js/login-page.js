@@ -27,7 +27,13 @@ function loginSucess() {
 }
 
 function loginUnsucess() {
+    if (document.getElementById('login-unsuccess-p')) {
+        let node = document.getElementById('login-unsuccess-p');
+        node.parentNode.removeChild(node);
+    }
+    
     let p = document.createElement('p');
+    p.id = 'login-unsuccess-p';
     p.innerText = 'E-mail ou senhas incorretos. Tente novamente.';
 
     loginForm.appendChild(p);
