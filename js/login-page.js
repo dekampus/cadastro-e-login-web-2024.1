@@ -31,10 +31,13 @@ function loginUnsuccess() {
         let node = document.getElementById('login-unsuccess-p');
         node.parentNode.removeChild(node);
     }
+
+    let passwordInput = document.getElementsByClassName('password-input')[0];
     
     let p = document.createElement('p');
     p.id = 'login-unsuccess-p';
-    p.innerText = 'E-mail ou senhas incorretos. Tente novamente.';
+    p.innerText = 'E-mail ou senhas incorretos. \nTente novamente.';
+    p.classList.add('login-unsuccess-p-appear');
 
-    loginForm.appendChild(p);
+    passwordInput.appendChild(p);
 }
