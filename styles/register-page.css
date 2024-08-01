@@ -1,0 +1,110 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+}
+
+.register-form-container {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    align-items: center;
+    justify-content: center;
+}
+
+#register-form {
+    height: fit-content;
+    width: 80vw;
+    padding: 20px;
+    background: linear-gradient(0deg, hsla(173, 58%, 39%, 1) 0%, hsla(213, 36%, 40%, 1) 100%);
+    border-radius: 15px;
+    color: #f3f3f3;
+}
+
+h1 {
+    font-size: 42px;
+}
+
+.name-input,
+.cpf-input,
+.email-input,
+.password-input,
+.register-button {
+    margin-top: 15px;
+}
+
+.email-input, .password-input {
+    margin-bottom: 20px;
+}
+
+label {
+    font-size: 18px;
+}
+
+input {
+    height: 50px;
+    width: 100%;
+    border: none;
+    margin-top: 5px;
+    padding: 5px 10px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 60px 0px rgba(0,0,0,0.3);
+    font-size: 1em;
+}
+
+.register-button {
+    margin: 30px 0;
+    text-align: center;
+}
+
+button {
+    border: none;
+    padding: 15px 35px;
+    border-radius: 10px;
+    color: #2a9d8f;
+    font-weight: bolder;
+    font-size: 20px;
+    box-shadow: 0px 0px 60px 0px rgba(0,0,0,0.3);
+}
+
+.login {
+    text-align: center;
+}
+
+.login a {
+    color: #264653;
+}
+
+#register-unsuccess-p {
+    margin-top: 20px;
+    text-align: center;
+    font-weight: bold;
+    color: #fff;
+}
+
+@keyframes append-animate {
+    from {
+        transform: scale(0);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.register-unsuccess-p-appear {
+    animation: append-animate .2s linear;
+}
+
+@media screen and (min-width: 768px) {
+    #register-form {
+        width: 45vw;
+        border-radius: 15px;
+        padding: 30px 25px;
+    }
+}

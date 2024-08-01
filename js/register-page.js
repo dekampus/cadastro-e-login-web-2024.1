@@ -51,14 +51,17 @@ function registerSuccess() {
 }
 
 function registerUnsuccess() {
-    if (document.getElementById('unsuccess-p')) {
-        let node = document.getElementById('unsuccess-p');
+    if (document.getElementById('register-unsuccess-p')) {
+        let node = document.getElementById('register-unsuccess-p');
         node.parentNode.removeChild(node);
     }
+
+    let passwordInput = document.getElementsByClassName('password-input')[0];
     
     let p = document.createElement('p');
-    p.id = 'unsuccess-p';
+    p.id = 'register-unsuccess-p';
     p.innerText = 'Não foi possível realizar o cadastro.\nE-mail já cadastrado.';
+    p.classList.add('register-unsuccess-p-appear');
 
-    registerForm.appendChild(p);
+    passwordInput.appendChild(p);
 }
