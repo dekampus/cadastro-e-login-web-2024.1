@@ -11,19 +11,24 @@ loginForm.addEventListener('submit', (e) => {
     if (!user)
         loginUnsuccess();
     else if (email == user.email && password == user.password)
-        loginSuccess();
+        loginSuccess(user);
     else
         loginUnsuccess();
 })
 
-function loginSuccess() {
+function loginSuccess(user) {
+    // Maybe you should redirect to a page.
     const loginFormContainer = document.getElementsByClassName('login-form-container')[0];
     loginForm.style.display = 'none';
 
     let p = document.createElement('p');
-    p.innerText = 'Logado com sucesso. Bem-vindo!';
+    p.innerText = `Logado com sucesso. Bem-vindo, ${user.name}!`;
 
-    loginFormContainer.appendChild(p);
+    let a = document.createElement('a');
+    a.href = './index.html';
+    a.innerText = 'Voltar para a página principal';
+
+    loginFormContainer.append(p, a);
 }
 
 function loginUnsuccess() {
