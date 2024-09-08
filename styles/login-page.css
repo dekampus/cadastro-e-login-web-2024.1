@@ -26,7 +26,29 @@ body {
 }
 
 h1 {
-    font-size: 42px;
+    text-align: center;
+    font-size: 2.3em;
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    margin-top: 5px;
+}
+
+img {
+    height: 80px;
+    background-color: rgb(255, 255, 255);
+    border: 8px solid #ffffff;
+    border-radius: 50%;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, .5);
+}
+
+p {
+    text-align: center;
+    font-weight: bolder;
+    margin-top: 5px;
+    font-size: 1.5em;
 }
 
 .email-input, .password-input, .sigin-button {
